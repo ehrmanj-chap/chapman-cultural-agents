@@ -50,7 +50,7 @@
   <header>
     <h1>Chapman AI Cultural Agents</h1>
     <p>A public testing page for AI communication agents.</p>
-    <p class="small">Created by Jordan Ehrman and Kelsie [Last Name], Chapman University</p>
+    <p class="small">Created by Kelsie Kato, Jordan Ehrman, Helene Blanchette, and Luis Salazar, Chapman University</p>
   </header>
 
   <main>
@@ -61,7 +61,7 @@
         Visitors are invited to ask questions, explore responses, and help evaluate usability and clarity.
       </p>
       <p class="small">
-        © 2026 Jordan Ehrman and Kelsie [Last Name]. All rights reserved.
+        © 2026 Kato, Ehrman Blanchette, Salazar. All rights reserved.
       </p>
     </section>
 
@@ -87,6 +87,78 @@
       allow="microphone">
       </iframe>
     </section>
+    <section class="card">
+  <h2>Feedback and Issue Reporting</h2>
+  <p>
+    If you have suggestions, notice inaccurate or confusing behavior, or run into technical issues,
+    please let us know below.
+  </p>
+
+  <form action="https://formspree.io/f/mpqkzozo" method="POST">
+    <input type="hidden" name="_subject" value="Giulia Agent Feedback Submission">
+
+    <label for="name">Name (optional)</label><br>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      style="width: 100%; padding: 10px; margin: 8px 0 16px; box-sizing: border-box;"
+    ><br>
+
+    <label for="email">Email (optional, if you'd like a follow-up)</label><br>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      style="width: 100%; padding: 10px; margin: 8px 0 16px; box-sizing: border-box;"
+    ><br>
+
+    <label for="agent">Which agent did you test?</label><br>
+    <select
+      id="agent"
+      name="agent"
+      style="width: 100%; padding: 10px; margin: 8px 0 16px; box-sizing: border-box;"
+      required
+    >
+      <option value="">Select one</option>
+      <option value="Giulia C.">Giulia C.</option>
+      <option value="Giulia B.">Giulia B.</option>
+      <option value="Both">Both</option>
+    </select><br>
+
+    <label for="issue_type">Feedback type</label><br>
+    <select
+      id="issue_type"
+      name="issue_type"
+      style="width: 100%; padding: 10px; margin: 8px 0 16px; box-sizing: border-box;"
+      required
+    >
+      <option value="">Select one</option>
+      <option value="General feedback">General feedback</option>
+      <option value="Bug / technical issue">Bug / technical issue</option>
+      <option value="Confusing response">Confusing response</option>
+      <option value="Inaccurate content">Inaccurate content</option>
+      <option value="Suggestion">Suggestion</option>
+    </select><br>
+
+    <label for="message">Comments</label><br>
+    <textarea
+      id="message"
+      name="message"
+      rows="8"
+      required
+      style="width: 100%; padding: 10px; margin: 8px 0 16px; box-sizing: border-box;"
+      placeholder="Tell us what you tried, what happened, and what could be improved."
+    ></textarea><br>
+
+    <button
+      type="submit"
+      style="background: #7a0019; color: white; border: none; padding: 12px 18px; border-radius: 8px; cursor: pointer;"
+    >
+      Send feedback
+    </button>
+  </form>
+</section>
   </main>
 </body>
 </html>
