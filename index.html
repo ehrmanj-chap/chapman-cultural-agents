@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chapman AI Cultural Agents: Public Testing</title>
+  <link rel="icon" type="image/svg+xml" href="site-icon.svg" />
+  <link rel="shortcut icon" type="image/svg+xml" href="site-icon.svg" />
   <style>
     :root {
       --chapman-red: #7a0019;
@@ -18,11 +20,7 @@
     }
 
     * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html { scroll-behavior: smooth; }
     body {
       font-family: Georgia, "Times New Roman", serif;
       margin: 0;
@@ -30,14 +28,8 @@
       color: var(--ink);
       line-height: 1.65;
     }
-
-    a {
-      color: var(--chapman-red);
-    }
-
-    a:hover {
-      color: var(--chapman-red-dark);
-    }
+    a { color: var(--chapman-red); }
+    a:hover { color: var(--chapman-red-dark); }
 
     header {
       background: linear-gradient(180deg, var(--chapman-red) 0%, #8e122d 100%);
@@ -45,37 +37,32 @@
       padding: 3rem 1rem 2.5rem;
       text-align: center;
     }
-
+    .site-icon {
+      width: 64px;
+      height: 64px;
+      display: block;
+      margin: 0 auto 1rem;
+      image-rendering: pixelated;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,0.22));
+    }
     header h1 {
       margin-bottom: 0.5rem;
       font-size: clamp(2rem, 4vw, 3rem);
     }
-
     header a {
       color: #fff;
       font-weight: 700;
       text-decoration-color: rgba(255,255,255,0.7);
       text-underline-offset: 0.15em;
     }
-
-    header a:hover {
-      color: #fff;
-      text-decoration-color: #fff;
-    }
-
+    header a:hover { color: #fff; text-decoration-color: #fff; }
     .header-subtitle {
       max-width: 760px;
       margin: 0.5rem auto 0;
       font-size: 1.05rem;
       opacity: 0.96;
     }
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1rem 4rem;
-    }
-
+    main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
     .card {
       background: var(--paper);
       border-radius: 14px;
@@ -83,14 +70,13 @@
       padding: 1.5rem;
       margin-bottom: 1.5rem;
     }
-
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
       margin-top: 1.25rem;
+      justify-content: center;
     }
-
     .button-link {
       display: inline-block;
       text-decoration: none;
@@ -101,36 +87,12 @@
       font-size: 0.98rem;
       transition: background 0.2s ease, transform 0.2s ease;
     }
-
-    .button-link.secondary {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.28);
-    }
-
-    .button-link:hover {
-      background: var(--chapman-red-dark);
-      color: #fff;
-      transform: translateY(-1px);
-    }
-
-    .button-link.secondary:hover {
-      background: rgba(255,255,255,0.22);
-    }
-
-    h1, h2, h3 {
-      margin-top: 0;
-      line-height: 1.25;
-    }
-
-    .small {
-      font-size: 0.95rem;
-      opacity: 0.92;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
+    .button-link.secondary { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.28); }
+    .button-link:hover { background: var(--chapman-red-dark); color: #fff; transform: translateY(-1px); }
+    .button-link.secondary:hover { background: rgba(255,255,255,0.22); }
+    h1, h2, h3 { margin-top: 0; line-height: 1.25; }
+    .small { font-size: 0.95rem; opacity: 0.92; }
+    .muted { color: var(--muted); }
     .notice-inline {
       margin-top: 1rem;
       padding: 0.9rem 1rem;
@@ -139,41 +101,17 @@
       border-radius: 10px;
       font-size: 0.98rem;
     }
-
     .qa-grid {
       display: grid;
       gap: 1rem;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       margin-top: 1rem;
     }
-
-    .qa-item {
-      padding: 1rem;
-      border: 1px solid #ececec;
-      border-radius: 12px;
-      background: #fafafa;
-    }
-
-    .qa-item h3 {
-      font-size: 1.05rem;
-      margin-bottom: 0.5rem;
-    }
-
-    iframe {
-      width: 100%;
-      min-height: 720px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: white;
-    }
-
-    label {
-      font-weight: 600;
-    }
-
-    input,
-    select,
-    textarea {
+    .qa-item { padding: 1rem; border: 1px solid #ececec; border-radius: 12px; background: #fafafa; }
+    .qa-item h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+    iframe { width: 100%; min-height: 720px; border: 1px solid var(--line); border-radius: 10px; background: white; }
+    label { font-weight: 600; }
+    input, select, textarea {
       width: 100%;
       padding: 10px;
       margin: 8px 0 16px;
@@ -184,11 +122,7 @@
       font-size: 1rem;
       background: white;
     }
-
-    textarea {
-      resize: vertical;
-    }
-
+    textarea { resize: vertical; }
     button[type="submit"] {
       background: var(--chapman-red);
       color: white;
@@ -199,25 +133,9 @@
       font-family: inherit;
       font-size: 1rem;
     }
-
-    button[type="submit"]:hover {
-      background: var(--chapman-red-dark);
-    }
-
-    footer {
-      padding: 2rem 1rem 3rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 0.75rem;
-    }
+    button[type="submit"]:hover { background: var(--chapman-red-dark); }
+    footer { padding: 2rem 1rem 3rem; text-align: center; color: var(--muted); font-size: 0.98rem; }
+    .footer-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 0.75rem; }
 
     .modal {
       display: none;
@@ -229,11 +147,7 @@
       align-items: center;
       justify-content: center;
     }
-
-    .modal.open {
-      display: flex;
-    }
-
+    .modal.open { display: flex; }
     .modal-content {
       width: min(1000px, 100%);
       max-height: 90vh;
@@ -244,7 +158,6 @@
       display: flex;
       flex-direction: column;
     }
-
     .modal-header {
       display: flex;
       align-items: center;
@@ -253,12 +166,7 @@
       padding: 1rem 1.25rem;
       border-bottom: 1px solid #ececec;
     }
-
-    .modal-header h2 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
-
+    .modal-header h2 { margin: 0; font-size: 1.2rem; }
     .modal-close {
       border: none;
       background: transparent;
@@ -268,24 +176,10 @@
       color: #555;
       padding: 0.25rem 0.5rem;
     }
+    .modal-body { padding: 0; min-height: 70vh; }
+    .modal-body iframe { border: none; border-radius: 0; min-height: 70vh; height: 70vh; }
 
-    .modal-body {
-      padding: 0;
-      min-height: 70vh;
-    }
-
-    .modal-body iframe {
-      border: none;
-      border-radius: 0;
-      min-height: 70vh;
-      height: 70vh;
-    }
-
-
-    .giulia-embed-shell {
-      position: relative;
-    }
-
+    .giulia-embed-shell { position: relative; }
     .conversation-tip {
       position: absolute;
       top: 3.25rem;
@@ -306,7 +200,6 @@
       pointer-events: none;
       transition: opacity 0.25s ease, transform 0.25s ease;
     }
-
     .conversation-tip::before {
       content: "";
       position: absolute;
@@ -319,74 +212,26 @@
       border-top: 1px solid rgba(122, 0, 25, 0.18);
       transform: rotate(45deg);
     }
-
-    .conversation-tip.open {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      pointer-events: auto;
-    }
-
-    .conversation-tip-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 0.75rem;
-      margin-bottom: 0.35rem;
-    }
-
-    .conversation-tip-title {
-      margin: 0;
-      color: var(--chapman-red);
-      font-size: 1rem;
-      line-height: 1.25;
-    }
-
-    .conversation-tip-close {
-      border: none;
-      background: transparent;
-      color: #555;
-      cursor: pointer;
-      font-size: 1.35rem;
-      line-height: 1;
-      padding: 0;
-    }
-
-    .conversation-tip p {
-      margin: 0;
-      color: var(--ink);
-    }
+    .conversation-tip.open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+    .conversation-tip-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.35rem; }
+    .conversation-tip-title { margin: 0; color: var(--chapman-red); font-size: 1rem; line-height: 1.25; }
+    .conversation-tip-close { border: none; background: transparent; color: #555; cursor: pointer; font-size: 1.35rem; line-height: 1; padding: 0; }
+    .conversation-tip p { margin: 0; color: var(--ink); }
 
     @media (max-width: 720px) {
-      header {
-        padding: 2.25rem 1rem 2rem;
-      }
-
-      .card {
-        padding: 1.2rem;
-      }
-
-      .conversation-tip {
-        top: 3rem;
-        right: 0.6rem;
-        width: min(320px, calc(100% - 1.2rem));
-      }
-
-      .modal {
-        padding: 0.75rem;
-      }
-
-      .modal-content {
-        max-height: 94vh;
-      }
-
-      .modal-body iframe {
-        height: 72vh;
-      }
+      header { padding: 2.25rem 1rem 2rem; }
+      .site-icon { width: 52px; height: 52px; }
+      .card { padding: 1.2rem; }
+      .conversation-tip { top: 3rem; right: 0.6rem; width: min(320px, calc(100% - 1.2rem)); }
+      .modal { padding: 0.75rem; }
+      .modal-content { max-height: 94vh; }
+      .modal-body iframe { height: 72vh; }
     }
   </style>
 </head>
 <body>
   <header>
+    <img class="site-icon" src="site-icon.svg" alt="Chapman AI Cultural Agents icon" width="64" height="64" />
     <h1>Chapman AI Cultural Agents</h1>
     <p class="header-subtitle">
       Public testing for two AI agents designed to support cross-cultural communication in Italian cultural and professional contexts.
@@ -403,25 +248,18 @@
     <section class="card" id="about">
       <h2>About this page</h2>
       <p>
-        This site hosts two publicly testable AI agents designed to support cross-cultural communication for students and professionals engaging with Italy. Visitors are invited to ask questions, compare
-        responses, and help us evaluate usability, clarity, and practical usefulness.
+        This site hosts two publicly testable AI agents designed to support cross-cultural communication for students and professionals engaging with Italy. Visitors are invited to ask questions, compare responses, and help us evaluate usability, clarity, and practical usefulness.
       </p>
       <p>
-        One agent focuses on cultural communication and everyday social norms, while the other focuses on business
-        culture and professional expectations. Together, they are meant to act less like generic chatbots and more like
-        specialized guides for a defined cross-cultural task.
+        One agent focuses on cultural communication and everyday social norms, while the other focuses on business culture and professional expectations. Together, they are meant to act less like generic chatbots and more like specialized guides for a defined cross-cultural task.
       </p>
-      <p class="small">
-        © 2026 Kelsie Kato, Jordan Ehrman, Helene Blanchette, Luis Salazar. All rights reserved.
-      </p>
+      <p class="small">© 2026 Kelsie Kato, Jordan Ehrman, Helene Blanchette, Luis Salazar. All rights reserved.</p>
     </section>
 
     <section class="card">
       <h2>What we hope testers will try</h2>
       <p>
-        We encourage visitors to ask practical, comparative, and scenario-based questions. You might try workplace or
-        etiquette questions, ask about regional differences, test how the agents handle ambiguity, or compare the two
-        Giulias on the same prompt to see whether they stay in their lanes.
+        We encourage visitors to ask practical, comparative, and scenario-based questions. You might try workplace or etiquette questions, ask about regional differences, test how the agents handle ambiguity, or compare the two Giulias on the same prompt to see whether they stay in their lanes.
       </p>
       <div class="qa-grid">
         <div class="qa-item">
@@ -438,16 +276,11 @@
     <section class="card" id="giulia-c">
       <h2>Giulia C.</h2>
       <p>
-        Giulia C. is an interactive AI guide for Italian culture and communication. She is designed to help users better
-        understand everyday social expectations in Italy, including conversational style, etiquette, nonverbal cues,
-        and culturally specific interaction norms.
+        Giulia C. is an interactive AI guide for Italian culture and communication. She is designed to help users better understand everyday social expectations in Italy, including conversational style, etiquette, nonverbal cues, and culturally specific interaction norms.
       </p>
+      <p class="notice-inline"><strong>Starting a new topic?</strong> Click the three dots in the chat window and choose <strong>Delete conversation</strong> when you want to start fresh with a new topic.</p>
       <p class="notice-inline">
-        <strong>Starting a new topic?</strong> Click the three dots in the chat window and choose <strong>Delete conversation</strong> when you want to start fresh with a new topic.
-      </p>
-      <p class="notice-inline">
-        We will only be able to access information you provide. Please avoid sharing personal, sensitive, or identifying
-        information. <a href="#" id="openTransparencyTop">Read our transparency notice</a>.
+        We will only be able to access information you provide. Please avoid sharing personal, sensitive, or identifying information. <a href="#" id="openTransparencyTop">Read our transparency notice</a>.
       </p>
       <div class="giulia-embed-shell" data-giulia-embed>
         <div class="conversation-tip" role="status" aria-live="polite" aria-hidden="true">
@@ -457,26 +290,16 @@
           </div>
           <p>Click the three dots in the chat window and choose <strong>Delete conversation</strong> when you want to start fresh with a new topic.</p>
         </div>
-        <iframe
-          src="https://app.relevanceai.com/agents/bcbe5a/d24efb3e-95f4-4c10-af35-17c87cc6d626/00c58a0f-6d7c-4af3-a213-a3443940d4f3/embed-chat?hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=true&hide_description=true"
-          width="100%"
-          height="600"
-          frameborder="0"
-          allow="microphone">
-        </iframe>
+        <iframe src="https://app.relevanceai.com/agents/bcbe5a/d24efb3e-95f4-4c10-af35-17c87cc6d626/00c58a0f-6d7c-4af3-a213-a3443940d4f3/embed-chat?hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=true&hide_description=true" width="100%" height="600" frameborder="0" allow="microphone"></iframe>
       </div>
     </section>
 
     <section class="card" id="giulia-b">
       <h2>Giulia B.</h2>
       <p>
-        Giulia B. is an interactive AI guide for Italian business culture and professional communication. She is designed
-        to help users prepare for workplace interactions in Italian contexts, including meetings, expectations around
-        professionalism, communication style, and cross-cultural business etiquette.
+        Giulia B. is an interactive AI guide for Italian business culture and professional communication. She is designed to help users prepare for workplace interactions in Italian contexts, including meetings, expectations around professionalism, communication style, and cross-cultural business etiquette.
       </p>
-      <p class="notice-inline">
-        <strong>Starting a new topic?</strong> Click the three dots in the chat window and choose <strong>Delete conversation</strong> when you want to start fresh with a new topic.
-      </p>
+      <p class="notice-inline"><strong>Starting a new topic?</strong> Click the three dots in the chat window and choose <strong>Delete conversation</strong> when you want to start fresh with a new topic.</p>
       <div class="giulia-embed-shell" data-giulia-embed>
         <div class="conversation-tip" role="status" aria-live="polite" aria-hidden="true">
           <div class="conversation-tip-header">
@@ -485,32 +308,19 @@
           </div>
           <p>Click the three dots in the chat window and choose <strong>Delete conversation</strong> when you want to start fresh with a new topic.</p>
         </div>
-        <iframe
-          src="https://app.relevanceai.com/agents/bcbe5a/d24efb3e-95f4-4c10-af35-17c87cc6d626/f9084211-b327-4342-b980-068bec2fb727/embed-chat?hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=true&hide_description=true"
-          width="100%"
-          height="600"
-          frameborder="0"
-          allow="microphone">
-        </iframe>
+        <iframe src="https://app.relevanceai.com/agents/bcbe5a/d24efb3e-95f4-4c10-af35-17c87cc6d626/f9084211-b327-4342-b980-068bec2fb727/embed-chat?hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=true&hide_description=true" width="100%" height="600" frameborder="0" allow="microphone"></iframe>
       </div>
     </section>
 
     <section class="card" id="feedback">
       <h2>Feedback and Issue Reporting</h2>
-      <p>
-        If you have suggestions, notice inaccurate or confusing behavior, or run into technical issues,
-        please let us know below.
-      </p>
-
+      <p>If you have suggestions, notice inaccurate or confusing behavior, or run into technical issues, please let us know below.</p>
       <form action="https://formspree.io/f/mpqkzozo" method="POST">
         <input type="hidden" name="_subject" value="Giulia Agent Feedback Submission">
-
         <label for="name">Name (optional)</label><br>
         <input type="text" id="name" name="name"><br>
-
         <label for="email">Email (optional, if you'd like a follow-up)</label><br>
         <input type="email" id="email" name="email"><br>
-
         <label for="agent">Which agent did you test?</label><br>
         <select id="agent" name="agent" required>
           <option value="">Select one</option>
@@ -518,7 +328,6 @@
           <option value="Giulia B.">Giulia B.</option>
           <option value="Both">Both</option>
         </select><br>
-
         <label for="issue_type">Feedback type</label><br>
         <select id="issue_type" name="issue_type" required>
           <option value="">Select one</option>
@@ -528,41 +337,19 @@
           <option value="Inaccurate content">Inaccurate content</option>
           <option value="Suggestion">Suggestion</option>
         </select><br>
-
         <label for="languages_tested">What language or languages did you test in?</label><br>
-        <input
-          type="text"
-          id="languages_tested"
-          name="languages_tested"
-          placeholder="For example: English, Italian, both, or another language"
-        ><br>
-
+        <input type="text" id="languages_tested" name="languages_tested" placeholder="For example: English, Italian, both, or another language"><br>
         <label for="difference_from_llm">How did the Giulias differ from the typical LLMs you use?</label><br>
-        <textarea
-          id="difference_from_llm"
-          name="difference_from_llm"
-          rows="4"
-          placeholder="For example: more specialized, more practical, more cautious, more context-aware, or not noticeably different"
-        ></textarea><br>
-
+        <textarea id="difference_from_llm" name="difference_from_llm" rows="4" placeholder="For example: more specialized, more practical, more cautious, more context-aware, or not noticeably different"></textarea><br>
         <label for="message">Comments</label><br>
-        <textarea
-          id="message"
-          name="message"
-          rows="8"
-          required
-          placeholder="Tell us what you tried, what happened, and what could be improved."
-        ></textarea><br>
-
+        <textarea id="message" name="message" rows="8" required placeholder="Tell us what you tried, what happened, and what could be improved."></textarea><br>
         <button type="submit">Send feedback</button>
       </form>
     </section>
   </main>
 
   <footer>
-    <div>
-      Thanks for helping us test these agents. Your feedback helps us improve scope, clarity, and cross-cultural usefulness.
-    </div>
+    <div>Thanks for helping us test these agents. Your feedback helps us improve scope, clarity, and cross-cultural usefulness.</div>
     <div class="footer-links">
       <a href="#about">About</a>
       <a href="#giulia-c">Giulia C.</a>
@@ -572,9 +359,6 @@
     </div>
   </footer>
 
-
-
-
   <div class="modal" id="transparencyModal" aria-hidden="true" role="dialog" aria-labelledby="transparencyTitle">
     <div class="modal-content">
       <div class="modal-header">
@@ -582,88 +366,45 @@
         <button class="modal-close" id="closeTransparency" aria-label="Close transparency notice">&times;</button>
       </div>
       <div class="modal-body">
-        <iframe
-          src="giulia-ai-transparency-notice.pdf"
-          title="Giulia AI Transparency Notice PDF">
-        </iframe>
+        <iframe src="giulia-ai-transparency-notice.pdf" title="Giulia AI Transparency Notice PDF"></iframe>
       </div>
     </div>
   </div>
 
   <script>
-
-
     (function () {
       const giuliaEmbeds = document.querySelectorAll('[data-giulia-embed]');
       const hideTimers = new WeakMap();
-
       function hideTip(embedShell) {
         const tip = embedShell.querySelector('.conversation-tip');
         if (!tip) return;
-
         const existingTimer = hideTimers.get(embedShell);
-        if (existingTimer) {
-          clearTimeout(existingTimer);
-        }
-
+        if (existingTimer) clearTimeout(existingTimer);
         tip.classList.remove('open');
         tip.setAttribute('aria-hidden', 'true');
       }
-
       function showTip(embedShell) {
         if (!embedShell || embedShell.dataset.tipShown === 'true') return;
-
         const tip = embedShell.querySelector('.conversation-tip');
         if (!tip) return;
-
-        // Deliberately page-load scoped only: no sessionStorage/localStorage.
-        // Each Giulia gets her own tip once per page load, even if the embedded
-        // RelevanceAI conversation itself remembers an old chat.
         embedShell.dataset.tipShown = 'true';
         tip.classList.add('open');
         tip.setAttribute('aria-hidden', 'false');
-
-        const timer = setTimeout(function () {
-          hideTip(embedShell);
-        }, 14000);
-
+        const timer = setTimeout(function () { hideTip(embedShell); }, 14000);
         hideTimers.set(embedShell, timer);
       }
-
       giuliaEmbeds.forEach(function (embedShell) {
         const iframe = embedShell.querySelector('iframe');
         const closeTip = embedShell.querySelector('.conversation-tip-close');
-
-        if (closeTip) {
-          closeTip.addEventListener('click', function () {
-            hideTip(embedShell);
-          });
-        }
-
-        embedShell.addEventListener('pointerenter', function () {
-          showTip(embedShell);
-        }, { once: true });
-
-        embedShell.addEventListener('click', function () {
-          showTip(embedShell);
-        }, { once: true });
-
-        embedShell.addEventListener('focusin', function () {
-          showTip(embedShell);
-        }, { once: true });
-
-        // Some browsers treat iframe focus/pointer events differently, so listen directly too.
+        if (closeTip) closeTip.addEventListener('click', function () { hideTip(embedShell); });
+        embedShell.addEventListener('pointerenter', function () { showTip(embedShell); }, { once: true });
+        embedShell.addEventListener('click', function () { showTip(embedShell); }, { once: true });
+        embedShell.addEventListener('focusin', function () { showTip(embedShell); }, { once: true });
         if (iframe) {
-          iframe.addEventListener('pointerenter', function () {
-            showTip(embedShell);
-          }, { once: true });
-
-          iframe.addEventListener('focus', function () {
-            showTip(embedShell);
-          }, { once: true });
+          iframe.addEventListener('pointerenter', function () { showTip(embedShell); }, { once: true });
+          iframe.addEventListener('focus', function () { showTip(embedShell); }, { once: true });
         }
       });
-
       if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
@@ -672,15 +413,8 @@
               observer.unobserve(entry.target);
             }
           });
-        }, {
-          root: null,
-          threshold: 0.12,
-          rootMargin: '0px 0px -8% 0px'
-        });
-
-        giuliaEmbeds.forEach(function (embedShell) {
-          observer.observe(embedShell);
-        });
+        }, { root: null, threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        giuliaEmbeds.forEach(function (embedShell) { observer.observe(embedShell); });
       }
     })();
 
@@ -689,35 +423,22 @@
       const openTop = document.getElementById('openTransparencyTop');
       const openFooter = document.getElementById('openTransparencyFooter');
       const closeBtn = document.getElementById('closeTransparency');
-
       function openModal(event) {
         event.preventDefault();
         modal.classList.add('open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
       }
-
       function closeModal() {
         modal.classList.remove('open');
         modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
       }
-
       openTop.addEventListener('click', openModal);
       openFooter.addEventListener('click', openModal);
       closeBtn.addEventListener('click', closeModal);
-
-      modal.addEventListener('click', function (event) {
-        if (event.target === modal) {
-          closeModal();
-        }
-      });
-
-      document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape' && modal.classList.contains('open')) {
-          closeModal();
-        }
-      });
+      modal.addEventListener('click', function (event) { if (event.target === modal) closeModal(); });
+      document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
     })();
   </script>
 </body>
