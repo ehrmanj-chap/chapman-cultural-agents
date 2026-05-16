@@ -1,3 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">
-  <image width="32" height="32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABbklEQVR4AbyWUXLCIBBAV47S9hQ5RTv9yp+X2EihUG/GRIMD8ASXdMPyWb8SKNrv99g/8GLWfkIuCVUPDLBPkf0HyRnTuVFw72AxEL9YO9sVMdfJSs7ukv8CfiPTWHK+2ER+9WfydAG2L/jKfDbrmIsQhWsne1X48zOJ60KHe5UrtIjj/vGfPSoGSd7oDHXJjjBKJ1fh6uRfzrMc8clCqQT8pFXe73aYGxScYf6ilHvJa+AVr93JF6KXrzhOzTKVccdbsXjT7MzEhgX/+WwXj/qs8XK3yQX1gu3jdHckghrBJqXRdBXRw56UHWGn/d4qdsjvowjzk9Lx2sdxZkWa5YYt7/rbzFehAbUxX3iIY/RtuF4Yx56+VMTxmGe7htV2HP2zBkAY/gXGAWBnP0vGgnPypU4VkYczwuCpjKoDT+WXG4nLiAV6F+K/GMX90qXEM/146zwpHzcKW13KN5twGCMCrbDN3xYkXrUfMnWWZgvUluXFtIL6Xha1BsDL/ZeUdI3PkDByiq+RzZgx4AAAAASUVORK5CYII=" />
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 1081 1081" role="img" aria-label="Chapman Cultural Intelligence Agents icon">
+  <title>Chapman Cultural Intelligence Agents icon</title>
+  <circle cx="540.5" cy="540.5" r="523.5" fill="#a00034"/>
+  <g fill="#ffffff">
+    <rect x="296" y="296" width="236" height="236"/>
+    <rect x="547" y="296" width="236" height="236"/>
+    <rect x="296" y="547" width="236" height="236"/>
+    <rect x="547" y="547" width="236" height="236"/>
+  </g>
+  <g stroke-linecap="square" fill="none">
+    <path d="M306 306 L532 532 M775 306 L547 532 M306 775 L532 547 M775 775 L547 547" stroke="#171717" stroke-width="15" opacity="0.95" transform="translate(7 7)"/>
+    <path d="M306 306 L532 532 M775 306 L547 532 M306 775 L532 547 M775 775 L547 547" stroke="#a00034" stroke-width="15"/>
+  </g>
 </svg>
