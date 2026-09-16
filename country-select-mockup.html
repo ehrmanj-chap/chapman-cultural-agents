@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <title>Chapman Cultural Intelligence Agents — Multi-country Mockup</title>
+  <link rel="icon" type="image/svg+xml" href="site-icon.svg?v=3" />
+  <style>
+    :root {
+      --chapman-red: #7a0019;
+      --chapman-red-dark: #5f0013;
+      --chapman-red-soft: #f8f2f3;
+      --ink: #222;
+      --muted: #5d5d5d;
+      --paper: #ffffff;
+      --page: #f6f6f6;
+      --line: #ddd;
+      --line-soft: #ececec;
+      --shadow: 0 2px 12px rgba(0,0,0,0.07);
+      --shadow-hover: 0 16px 34px rgba(0,0,0,0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--page);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    a { color: var(--chapman-red); }
+    a:hover { color: var(--chapman-red-dark); }
+    button, input, textarea { font: inherit; }
+
+    header {
+      background: linear-gradient(180deg, var(--chapman-red) 0%, #8e122d 100%);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem 2.65rem;
+    }
+
+    header h1 {
+      margin: 0 0 0.55rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+    }
+
+    .header-subtitle {
+      max-width: 780px;
+      margin: 0.45rem auto 0;
+      font-size: 1.08rem;
+      opacity: 0.96;
+    }
+
+    .header-kicker {
+      margin: 0 0 0.7rem;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      opacity: 0.8;
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.3rem;
+    }
+
+    .button-link,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border: none;
+      border-radius: 999px;
+      padding: 0.75rem 1.05rem;
+      background: var(--chapman-red);
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button-link.secondary {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.28);
+    }
+
+    .button-link:hover,
+    .button:hover {
+      background: var(--chapman-red-dark);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .button-link.secondary:hover { background: rgba(255,255,255,0.22); }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .card {
+      background: var(--paper);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2, h3 { margin-top: 0; line-height: 1.25; }
+    .muted { color: var(--muted); }
+    .small { font-size: 0.95rem; }
+
+    .intro-card {
+      text-align: center;
+      padding: 1.7rem 1.5rem;
+    }
+
+    .intro-card p {
+      max-width: 780px;
+      margin: 0.5rem auto 0;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 1.7rem 0 1rem;
+    }
+
+    .section-heading h2 { margin-bottom: 0.25rem; }
+    .section-heading p { margin: 0; color: var(--muted); }
+
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .agent-card {
+      position: relative;
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--line-soft);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 1.4rem;
+      min-height: 295px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .agent-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--chapman-red);
+    }
+
+    .agent-card:hover,
+    .agent-card:focus-within {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(122,0,25,0.28);
+    }
+
+    .agent-card.placeholder {
+      border: 1px dashed #c8c8c8;
+      background: #fafafa;
+      box-shadow: none;
+    }
+
+    .agent-card.placeholder::before { background: #cfcfcf; }
+    .agent-card.placeholder:hover { transform: none; box-shadow: none; border-color: #c8c8c8; }
+
+    .flag-row {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .flag {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 2.15rem;
+      background: var(--chapman-red-soft);
+      border: 1px solid rgba(122,0,25,0.13);
+      box-shadow: inset 0 0 0 5px rgba(255,255,255,0.55);
+      flex: 0 0 auto;
+    }
+
+    .flag.placeholder-flag {
+      color: #777;
+      background: #f2f2f2;
+      border-color: #ddd;
+      font-size: 1.7rem;
+    }
+
+    .country-name {
+      margin: 0;
+      color: var(--chapman-red);
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .agent-name {
+      margin: 0.05rem 0 0;
+      font-size: 1.55rem;
+    }
+
+    .agent-description {
+      margin: 0 0 1rem;
+      color: #383838;
+    }
+
+    .tags {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.1rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.28rem 0.6rem;
+      border-radius: 999px;
+      background: var(--chapman-red-soft);
+      color: var(--chapman-red-dark);
+      border: 1px solid rgba(122,0,25,0.13);
+      font-size: 0.84rem;
+    }
+
+    .agent-actions {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .agent-button {
+      border: none;
+      border-radius: 999px;
+      background: var(--chapman-red);
+      color: white;
+      padding: 0.72rem 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .agent-button:hover { background: var(--chapman-red-dark); transform: translateY(-1px); }
+    .agent-meta { color: var(--muted); font-size: 0.9rem; }
+
+    .notice-inline {
+      margin: 1rem 0 0;
+      padding: 0.9rem 1rem;
+      background: var(--chapman-red-soft);
+      border-left: 4px solid var(--chapman-red);
+      border-radius: 10px;
+      font-size: 0.98rem;
+    }
+
+    .workspace {
+      display: none;
+      scroll-margin-top: 1.5rem;
+    }
+
+    .workspace.open { display: block; }
+
+    .workspace-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line-soft);
+    }
+
+    .workspace-identity {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .workspace-identity .flag {
+      width: 54px;
+      height: 54px;
+      font-size: 1.8rem;
+    }
+
+    .back-button {
+      border: 1px solid #d2d2d2;
+      background: white;
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 0.6rem 0.85rem;
+      cursor: pointer;
+    }
+
+    .back-button:hover { border-color: var(--chapman-red); color: var(--chapman-red); }
+
+    .workspace-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 290px;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .chat-shell {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fbfbfb;
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .messages {
+      flex: 1;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .message {
+      max-width: 78%;
+      border-radius: 13px;
+      padding: 0.8rem 0.9rem;
+      line-height: 1.5;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .message.agent {
+      align-self: flex-start;
+      background: white;
+      border: 1px solid #e5e5e5;
+    }
+
+    .message.user {
+      align-self: flex-end;
+      background: var(--chapman-red-soft);
+      border: 1px solid rgba(122,0,25,0.12);
+    }
+
+    .composer {
+      padding: 0.9rem;
+      border-top: 1px solid var(--line);
+      background: white;
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-end;
+    }
+
+    .composer textarea {
+      flex: 1;
+      min-height: 72px;
+      resize: none;
+      border: 1px solid #cfcfcf;
+      border-radius: 10px;
+      padding: 0.75rem;
+      color: #777;
+      background: #fafafa;
+    }
+
+    .composer button {
+      border: none;
+      background: #aaa;
+      color: white;
+      border-radius: 8px;
+      padding: 0.72rem 1rem;
+      cursor: not-allowed;
+    }
+
+    .starter-panel {
+      background: white;
+      border: 1px solid var(--line-soft);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+
+    .starter-panel h3 { font-size: 1.05rem; margin-bottom: 0.6rem; }
+    .starter-panel p { margin-top: 0; }
+
+    .starter {
+      display: block;
+      width: 100%;
+      text-align: left;
+      border: 1px solid #e3e3e3;
+      background: #fafafa;
+      border-radius: 10px;
+      padding: 0.75rem;
+      margin-bottom: 0.65rem;
+      color: #333;
+    }
+
+    .future-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .future-slot {
+      border: 1px dashed #c9c9c9;
+      border-radius: 12px;
+      background: #fafafa;
+      padding: 1rem;
+      min-height: 110px;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #666;
+    }
+
+    .future-slot strong { display: block; color: #444; }
+    .future-plus { font-size: 1.5rem; color: var(--chapman-red); }
+
+    footer {
+      padding: 2rem 1rem 3rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    @media (max-width: 780px) {
+      header { padding: 2.3rem 1rem 2rem; }
+      .workspace-body { grid-template-columns: 1fr; }
+      .workspace-top { align-items: flex-start; flex-direction: column; }
+      .agent-actions { align-items: flex-start; flex-direction: column; }
+      .message { max-width: 92%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="header-kicker">Chapman University · Cultural Intelligence Research</p>
+    <h1>Chapman Cultural Intelligence Agents</h1>
+    <p class="header-subtitle">
+      Explore country-specific AI agents designed to support cross-cultural communication, everyday cultural understanding, and professional preparation.
+    </p>
+    <div class="hero-actions">
+      <a class="button-link secondary" href="#agents">Choose an agent</a>
+      <a class="button-link secondary" href="#about">About the project</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="card intro-card" id="about">
+      <h2>Choose the cultural context you want to explore</h2>
+      <p>
+        Each agent combines cultural and professional intelligence for one country while preserving the same public-facing research experience. Select a country below to enter that agent's workspace.
+      </p>
+      <p class="notice-inline"><strong>Research prototype:</strong> This mockup shows the proposed public interface only. Chat connections are intentionally disabled here.</p>
+    </section>
+
+    <section id="agents">
+      <div class="section-heading">
+        <div>
+          <h2>Available agents</h2>
+          <p>One public identity per country, with cultural and business expertise behind the scenes.</p>
+        </div>
+      </div>
+
+      <div class="agent-grid">
+        <article class="agent-card">
+          <div class="flag-row">
+            <div class="flag" aria-hidden="true">🇮🇹</div>
+            <div>
+              <p class="country-name">Italy</p>
+              <h3 class="agent-name">Giulia</h3>
+            </div>
+          </div>
+          <p class="agent-description">
+            Italian cultural and business intelligence for students, professionals, and visitors navigating communication, etiquette, regional nuance, and workplace expectations.
+          </p>
+          <div class="tags">
+            <span class="tag">Culture</span>
+            <span class="tag">Business</span>
+            <span class="tag">Communication</span>
+          </div>
+          <div class="agent-actions">
+            <button class="agent-button" type="button" data-agent="giulia">Open Giulia</button>
+            <span class="agent-meta">Italy</span>
+          </div>
+        </article>
+
+        <article class="agent-card">
+          <div class="flag-row">
+            <div class="flag" aria-hidden="true">🇯🇵</div>
+            <div>
+              <p class="country-name">Japan</p>
+              <h3 class="agent-name">Mei</h3>
+            </div>
+          </div>
+          <p class="agent-description">
+            Japanese cultural and business intelligence for navigating language register, social expectations, etiquette, relationship-building, meetings, and professional norms.
+          </p>
+          <div class="tags">
+            <span class="tag">Culture</span>
+            <span class="tag">Business</span>
+            <span class="tag">Language</span>
+          </div>
+          <div class="agent-actions">
+            <button class="agent-button" type="button" data-agent="mei">Open Mei</button>
+            <span class="agent-meta">Japan</span>
+          </div>
+        </article>
+
+        <article class="agent-card placeholder" aria-label="Future country agent placeholder">
+          <div class="flag-row">
+            <div class="flag placeholder-flag" aria-hidden="true">＋</div>
+            <div>
+              <p class="country-name" style="color:#777;">Future agent</p>
+              <h3 class="agent-name">More countries</h3>
+            </div>
+          </div>
+          <p class="agent-description muted">
+            The layout is designed to expand without changing the navigation model. New country agents can be added as additional cards using the same structure.
+          </p>
+          <div class="tags">
+            <span class="tag" style="background:#f2f2f2;color:#666;border-color:#ddd;">Expandable</span>
+            <span class="tag" style="background:#f2f2f2;color:#666;border-color:#ddd;">Same UI</span>
+          </div>
+          <div class="agent-actions">
+            <span class="agent-meta">Coming later</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="card workspace" id="agent-workspace" aria-live="polite">
+      <div class="workspace-top">
+        <div class="workspace-identity">
+          <div class="flag" id="workspaceFlag" aria-hidden="true">🇮🇹</div>
+          <div>
+            <p class="country-name" id="workspaceCountry">Italy</p>
+            <h2 id="workspaceName" style="margin-bottom:0.15rem;">Giulia</h2>
+            <div class="muted" id="workspaceSubtitle">Italian cultural + business intelligence</div>
+          </div>
+        </div>
+        <button class="back-button" id="backToAgents" type="button">← Choose another country</button>
+      </div>
+
+      <div class="workspace-body">
+        <div class="chat-shell">
+          <div class="messages" id="mockMessages">
+            <div class="message agent" id="welcomeMessage">Hello, I'm Giulia. Ask me about Italian culture, communication, or professional life.</div>
+            <div class="message user">How formal should I be when meeting an Italian manager for the first time?</div>
+            <div class="message agent">In a first meeting, a slightly more formal opening is usually the safer starting point. You can relax the tone as the relationship and setting make that appropriate. The exact balance depends on the company, sector, age mix, and regional context.</div>
+          </div>
+          <div class="composer">
+            <textarea disabled aria-label="Disabled chat input">Chat would appear here when the live agent is connected.</textarea>
+            <button disabled type="button">Send</button>
+          </div>
+        </div>
+
+        <aside class="starter-panel">
+          <h3>Try asking</h3>
+          <p class="muted small">Example prompts would change with the selected country.</p>
+          <div id="starters"></div>
+          <p class="notice-inline small"><strong>Prototype note:</strong> These are interface examples only; nothing on this page sends a model request.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Built to grow</h2>
+      <p>
+        Country cards can be added without changing how visitors use the site. Each new agent inherits the same selection flow, visual treatment, public transparency language, and chat shell while keeping its own country-specific knowledge and behavior.
+      </p>
+      <div class="future-strip">
+        <div class="future-slot"><span class="future-plus">＋</span><div><strong>Country agent</strong><span class="small">Future slot</span></div></div>
+        <div class="future-slot"><span class="future-plus">＋</span><div><strong>Country agent</strong><span class="small">Future slot</span></div></div>
+        <div class="future-slot"><span class="future-plus">＋</span><div><strong>Country agent</strong><span class="small">Future slot</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Chapman Cultural Intelligence Agents · Multi-country interface mockup
+  </footer>
+
+  <script>
+    const agents = {
+      giulia: {
+        name: 'Giulia',
+        country: 'Italy',
+        flag: '🇮🇹',
+        subtitle: 'Italian cultural + business intelligence',
+        welcome: "Hello, I'm Giulia. Ask me about Italian culture, communication, or professional life.",
+        sampleUser: 'How formal should I be when meeting an Italian manager for the first time?',
+        sampleAgent: 'In a first meeting, a slightly more formal opening is usually the safer starting point. You can relax the tone as the relationship and setting make that appropriate. The exact balance depends on the company, sector, age mix, and regional context.',
+        starters: [
+          'What should I expect in a first business meeting in Milan?',
+          'How do regional differences affect communication in Italy?',
+          'What does bella figura mean in practice?'
+        ]
+      },
+      mei: {
+        name: 'Mei',
+        country: 'Japan',
+        flag: '🇯🇵',
+        subtitle: 'Japanese cultural + business intelligence',
+        welcome: "Hello, I'm Mei. Ask me about Japanese culture, communication, language, or professional life.",
+        sampleUser: 'Should I introduce a major proposal for the first time during a formal meeting?',
+        sampleAgent: 'In organizations that rely on nemawashi-style consensus building, introducing a major proposal for the first time in the formal meeting can be counterproductive. Advance conversations with relevant stakeholders may matter as much as the meeting itself, though practices vary widely by company and sector.',
+        starters: [
+          'How does keigo change depending on who I am speaking to?',
+          'What is nemawashi and when does it matter?',
+          'What is a safe default for exchanging business cards in Japan?'
+        ]
+      }
+    };
+
+    const workspace = document.getElementById('agent-workspace');
+    const flag = document.getElementById('workspaceFlag');
+    const country = document.getElementById('workspaceCountry');
+    const name = document.getElementById('workspaceName');
+    const subtitle = document.getElementById('workspaceSubtitle');
+    const mockMessages = document.getElementById('mockMessages');
+    const starters = document.getElementById('starters');
+
+    function openAgent(id) {
+      const agent = agents[id];
+      if (!agent) return;
+
+      flag.textContent = agent.flag;
+      country.textContent = agent.country;
+      name.textContent = agent.name;
+      subtitle.textContent = agent.subtitle;
+      mockMessages.innerHTML = `
+        <div class="message agent">${agent.welcome}</div>
+        <div class="message user">${agent.sampleUser}</div>
+        <div class="message agent">${agent.sampleAgent}</div>
+      `;
+      starters.innerHTML = agent.starters.map(prompt => `<div class="starter">${prompt}</div>`).join('');
+      workspace.classList.add('open');
+      workspace.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    document.querySelectorAll('[data-agent]').forEach(button => {
+      button.addEventListener('click', () => openAgent(button.dataset.agent));
+    });
+
+    document.getElementById('backToAgents').addEventListener('click', () => {
+      workspace.classList.remove('open');
+      document.getElementById('agents').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  </script>
+</body>
+</html>
