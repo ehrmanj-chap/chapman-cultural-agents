@@ -12,25 +12,25 @@ Use the public website link supplied by the AI Garage or Schmid Center team. The
 
 | Item | What it controls |
 | --- | --- |
-| [\`index.html\`](index.html) | **Current public website**: layout, text, links, embedded chat windows and feedback form |
-| [\`giulia-ai-transparency-notice.pdf\`](giulia-ai-transparency-notice.pdf) | Transparency notice shown inside the website |
-| [\`site-icon.svg\`](site-icon.svg) | Site favicon |
-| \`giulia_public_testing_updated.html\` and \`index_with_conversation_tip_near_dots_v2.html\` | Older/alternate HTML snapshots. **Do not edit these expecting the main website to change.** |
-| [\`relevance-logging/\`](relevance-logging/) | Supporting logging material; have a technical maintainer review before changing |
+| [`index.html`](index.html) | **Current public website**: layout, text, links, embedded chat windows and feedback form |
+| [`giulia-ai-transparency-notice.pdf`](giulia-ai-transparency-notice.pdf) | Transparency notice shown inside the website |
+| [`site-icon.svg`](site-icon.svg) | Site favicon |
+| `giulia_public_testing_updated.html` and `index_with_conversation_tip_near_dots_v2.html` | Older/alternate HTML snapshots. **Do not edit these expecting the main website to change.** |
+| [`relevance-logging/`](relevance-logging/) | Supporting logging material; have a technical maintainer review before changing |
 
-**Important:** This page embeds **Relevance AI** agents. Their personalities, source libraries, functionality, billing and access must be managed in the relevant **Relevance AI workspace**, not in this HTML repository or the separate Qwen-based \`giulia-tester\`. The feedback form sends submissions through **Formspree**. GitHub access by itself does not grant access to either service.
+**Important:** This page embeds **Relevance AI** agents. Their personalities, source libraries, functionality, billing and access must be managed in the relevant **Relevance AI workspace**, not in this HTML repository or the separate Qwen-based `giulia-tester`. The feedback form sends submissions through **Formspree**. GitHub access by itself does not grant access to either service.
 
 ## For Kelsie and future student maintainers (no terminal needed)
 
 ### Change an ordinary line of site text
 
 1. Sign in to GitHub with your **own account** and make sure you have repository **Write** or higher access.
-2. Open [\`index.html\`](index.html) and select the pencil **Edit** control.
+2. Open [`index.html`](index.html) and select the pencil **Edit** control.
 3. Change only the text you understand. Keep the surrounding HTML tags and embedded agent/form URLs intact.
 4. Under **Commit changes**, choose **Create a new branch and start a pull request**.
 5. Ask another maintainer to review the change. After approval, merge, then check the actual public site on desktop and phone.
 
-For the quickest orientation, **\`index.html\` is the only main public webpage here**. Do not delete alternate versions or alter the feedback/transparency setup to tidy the file list.
+For the quickest orientation, **`index.html` is the only main public webpage here**. Do not delete alternate versions or alter the feedback/transparency setup to tidy the file list.
 
 ### Change what Giulia knows or says
 
@@ -38,7 +38,7 @@ Open the project's **Relevance AI workspace** with an authorized account. Confir
 
 ### Check feedback submissions
 
-The form in \`index.html\` uses **Formspree**. Ask the current form owner to grant the club or faculty advisor access to the Formspree dashboard and confirm who receives feedback notifications. Editing this repository does not grant Formspree inbox access.
+The form in `index.html` uses **Formspree**. Ask the current form owner to grant the club or faculty advisor access to the Formspree dashboard and confirm who receives feedback notifications. Editing this repository does not grant Formspree inbox access.
 
 ## Ownership and continuity
 
